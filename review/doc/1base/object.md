@@ -16,7 +16,7 @@ Object类是所有java类的根基类，所有的类都是从它继承下来。
     非常重要的一个方法，用于判断对象与对象之间是否相等，注意：equals与== 不一样， equals只判断对象的值是否相等，==除了判断对象的值，还需要判断对象的内存地址是否一样 注意：equals的参数是Object类型的
     
 4.  hashCode()  
-    此方法返回对象的hash值，主要用于一些集合类(例如HashMap)中进行对象哈希查找，需要强调一对：此方法与equals是一对的，对象重写equals方法一定要把hashcode方法也一起重写 定理：equals的两个对象hashCode一定相等，hashCode相等的两个对象不一定equals
+    此方法返回对象的hash值，主要用于一些集合类(例如HashMap)中进行对象哈希查找，需要强调一对：此方法与equals是一对的，对象重写equals方法一定要把hashcode方法也一起重写,而且选取相同的属性进行运算 定理：equals的两个对象hashCode一定相等，hashCode相等的两个对象不一定equals
     
 5.  wait()  
     用于暂停持有对象的线程，让出资源，让当前线程进入等待状态, 他与Thread的sleep方法有着本质的区别，wait方法是让线程进入等待状态，此时并不占用对象资源，其他线程可以占用该对象，而sleep方法是霸占着对象资源睡大觉，其他线程只能眼巴巴等着。 该线程wait之后进入等等状态，想要再进入调度状态需要用以下方式唤醒， 1.调用了notify或者notifyAll方法 2.wait()方法设置的等待时间到了 3.其它线程调用了中断线程方法interrupt方法
